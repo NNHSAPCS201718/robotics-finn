@@ -1,37 +1,20 @@
 import lejos.nxt.*;
 import lejos.util.*;
-
 /**
- * Write a description of class Motors here.
+ * Write a description of class Motor2 here.
  *
- * @author kittyk4t
- * @version 17 May 2018
+ * @author (your name)
+ * @version (a version number or a date)
  */
-public class Motors
+public class Motor2
 {
-    public static void program1()
-    {
-        System.out.println( "Program 1" );
-        Button.waitForAnyPress();
-
-        Motor.C.forward();
-        System.out.println( "FORWARD" );
-
-        Button.waitForAnyPress();
-
-        Motor.C.backward();
-
-        Button.waitForAnyPress();
-
-        Motor.C.stop();
-
-    }
-
-    public static void program2()
+    public static void main( String[] args )
     {
         System.out.println( "Program 2" );
 
         Motor.C.setSpeed(2);
+        
+        Button.waitForAnyPress();
         Motor.C.forward();
 
         Delay.msDelay(2000);
@@ -48,5 +31,4 @@ public class Motors
         
         Button.waitForAnyPress();
     }
-    
 }
