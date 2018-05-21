@@ -12,23 +12,27 @@ public class Motor2
     {
         System.out.println( "Program 2" );
 
-        Motor.C.setSpeed(2);
-        
+        Motor.C.setSpeed(720);
+
         Button.waitForAnyPress();
         Motor.C.forward();
 
         Delay.msDelay(2000);
+        System.out.println(Motor.C.getTachoCount());
+        Motor.C.stop();
 
         System.out.println(Motor.C.getTachoCount());
 
         while(Motor.C.getTachoCount() >0)
         {
             Motor.C.backward();
+
         }
         System.out.println(Motor.C.getTachoCount());
         Motor.C.stop();
+
         System.out.println(Motor.C.getTachoCount());
-        
+
         Button.waitForAnyPress();
     }
 }
