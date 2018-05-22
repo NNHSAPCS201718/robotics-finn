@@ -11,23 +11,19 @@ public class Motor5
     public static void main( String[] args )
     {
         System.out.println( "Program 5\n" );
+        Button.waitForAnyPress();
+        
         Motor.C.setSpeed(720);
         Motor.B.setSpeed(720);
 
-        Motor.C.forward();
-        Motor.B.forward();
         for(int i=0; i<9; i++)
         {
-            while((Motor.C.getTachoCount()%720)!=0)
-            {
-                Motor.C.forward();
-
-                Motor.B.forward();
-            }
-
+            Motor.C.rotate(720,true);
+            Motor.B.rotate(720,true);
             Delay.msDelay(200);
             System.out.print(Motor.C.getTachoCount()+" "+Motor.B.getTachoCount()+"\n");
         }
+
 
         Button.waitForAnyPress();
     }
