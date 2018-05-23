@@ -5,19 +5,16 @@ import lejos.robotics.navigation.*;
  * Write a description of class Square here.
  *
  * @author kittyk4t
- * @version 22 May 2018
+ * @version 23 May 2018
  */
-public class Square
+public class UltraSonic
 {
     public static void main(String args[])
     {
         Button.waitForAnyPress();
-        DifferentialPilot pilot= new DifferentialPilot( 5.3, 10, Motor.C, Motor.B);
+        UltrasonicSensor sensor= new UltrasonicSensor(SensorPort.S3);
 
-        for(int i=0; i<4; i++)
-        {
-            pilot.travel(20);
-            pilot.rotate(90);
-        }
+        System.out.println(sensor.getDistance());
+        Button.waitForAnyPress();
     }
 }
